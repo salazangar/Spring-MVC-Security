@@ -47,7 +47,9 @@ public class DemoSecurityConfig {
                                 .loginPage("/showLoginPage")
                                 .loginProcessingUrl("/authenticateTheUser")  // no controller mapping needed for this
                                 .permitAll()
-                );
+                )
+
+                .logout(logout -> logout.permitAll());
         return http.build();
     }
 }
